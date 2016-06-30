@@ -1,0 +1,16 @@
+PODS:
+  - CocoazurLib (0.1.0)
+
+DEPENDENCIES:
+  - CocoazurLib (from `../`)
+
+EXTERNAL SOURCES:
+  CocoazurLib:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CocoazurLib: 3e43b7803951279bb8bc6b7ad193c7bee5dec2f8
+
+PODFILE CHECKSUM: 2e9847f245e3b14397388282af126518e1b25975
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,6 @@
+framework module Pods_CocoazurLib_Tests {
+  umbrella header "Pods-CocoazurLib_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module CocoazurLib {
+  umbrella header "CocoazurLib-umbrella.h"
+
+  export *
+  module * { export * }
+}
