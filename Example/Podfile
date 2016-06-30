@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CocoazurLib_Example' do
+  pod 'CocoazurLib', :path => '../'
+
+  target 'CocoazurLib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
