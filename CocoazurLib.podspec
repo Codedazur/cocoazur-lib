@@ -39,4 +39,8 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'CDADropbox' do |db|
+    db.source_files   = 'Source/Dropbox/**/*'
+    db.dependency       'SwiftyDropbox', '~> 3.0.0'
+  end
 end
