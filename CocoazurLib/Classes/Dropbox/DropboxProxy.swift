@@ -106,14 +106,23 @@ class DropboxProxy{
         }
     }
     func upload(file:DropboxFile, with client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
-        
+        let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
         if(exceedsChunkSize(file.path)){
             //TODO: create the upload using session
+            client.files.uploadSessionStart(body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
+            }).response({ (sessionStartResult, error) in
+                if let session = sessionStartResult {
+                    client.files.uploadSessionAppend(sessionId: session, offset: 0 , body: url)
+                }
+            })
         }else{
-            let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
+            
             client.files.upload(path: file.folder, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                 self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
             }).response({[weak self] (fileMetadata, error) in
+                
+                // TODO: do soemthing with error
                 if let date = fileMetadata?.serverModified{
                     file.modifiedAt = date
                 }
@@ -175,6 +184,19 @@ class DropboxProxy{
                 checkFinished()
             }
         }
+    }
+    
+    func chunk(file:DropboxFile, offset:Int, chunkSize:Int)->NSData?{
+        guard let data = NSData(contentsOfFile: file.path) else{
+            return nil
+        }
+        let length = data.length
+
+        let thisChunkSize = length - offset > chunkSize ? chunkSize : length - offset;
+    
+        var chunk = NSData(bytesNoCopy: data.bytes + offset, length: thisChunkSize, freeWhenDone: false)
+        
+        return chunk;
     }
 
 }

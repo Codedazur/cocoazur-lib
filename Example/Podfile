@@ -2,10 +2,12 @@ use_frameworks!
 
 target 'CocoazurLib_Example' do
   pod 'CocoazurLib', :path => '../'
+  pod 'CocoazurLib/CDADropbox', :path => '../'
 
   target 'CocoazurLib_Tests' do
     inherit! :search_paths
-
+    pod 'CocoazurLib', :path => '../'
+    pod 'CocoazurLib/CDADropbox', :path => '../'
     
   end
 end

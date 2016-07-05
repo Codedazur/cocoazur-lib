@@ -9,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoazurLib (from `../`)
+  - CocoazurLib/CDADropbox (from `../`)
 
 EXTERNAL SOURCES:
   CocoazurLib:
@@ -19,6 +20,6 @@ SPEC CHECKSUMS:
   CocoazurLib: de5e75a426c877126c6202db9f22ca5afd0733b7
   SwiftyDropbox: e0d4aa3166082ec07ed942e94edb8c732b3376e4
 
-PODFILE CHECKSUM: 2e9847f245e3b14397388282af126518e1b25975
+PODFILE CHECKSUM: c47ca388aef183c340978a8d903bb5ac2519b312
 
 COCOAPODS: 1.0.1
