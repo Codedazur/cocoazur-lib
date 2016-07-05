@@ -19,7 +19,7 @@ class DropboxFile{
     var id:String = "";
     var path:String = "";
     var folder:String = "";
-    var reupload:Bool = false;
+    var reupload:Bool = false;//TODO change to overwrite
     var modifiedAt:NSDate = NSDate()
     var name:String{
         get{
@@ -36,6 +36,7 @@ protocol DropboxProxyDelegate:class{
     
 }
 class DropboxProxy{
+    public var chunkSize = 150*1024*1024
     private var completedUploads = 0
     private var totalUplads = 0
     private var currentUploadProgress = 0.0
@@ -56,6 +57,7 @@ class DropboxProxy{
  */
     
     func upload(files:[DropboxFile], using context:UIViewController,to folder:String = "", returning type:DropBoxResultType = .None, completion: (shareableLinks: [String]) -> Void)->Void{
+        
         totalUplads = files.count
         let checkFinished = {[weak self] in
             guard let completed = self?.completedUploads, let total = self?.totalUplads else{
@@ -65,6 +67,7 @@ class DropboxProxy{
                 completion(shareableLinks: [])
             }
         }
+        
         if let client = Dropbox.authorizedClient {
             
             var shareableLinks:[String] = []
@@ -108,13 +111,18 @@ class DropboxProxy{
     func upload(file:DropboxFile, with client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
         if(exceedsChunkSize(file.path)){
+            
+            var offset:UInt64 = 0
             //TODO: create the upload using session
-            client.files.uploadSessionStart(body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+            guard let chunk = dataChunk(file, offset: offset, chunkSize: chunkSize) else{
+                //TODO: some error?
+                return;
+            }
+            
+            client.files.uploadSessionStart(body: chunk).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                 self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
-            }).response({ (sessionStartResult, error) in
-                if let session = sessionStartResult {
-                    client.files.uploadSessionAppend(sessionId: session, offset: 0 , body: url)
-                }
+            }).response({[weak self] (sessionStartResult, error) in
+                
             })
         }else{
             
@@ -186,19 +194,37 @@ class DropboxProxy{
         }
     }
     
-    func chunk(file:DropboxFile, offset:Int, chunkSize:Int)->NSData?{
+    func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:Int, sessionId:String, client:DropboxClient)->Void{
+        var offset = pOffset + 1
+        guard let chunk = self.dataChunk(file, offset: offset, chunkSize: chunkSize) else{
+            //TODO: some error?
+            client.files.uploadSessionFinish(cursor: Files.UploadSessionCursor(sessionId: sessionId, offset: 150),commit: Files.CommitInfo(path: file.remotePath),body:NSData()).response({ (metadata, error) in
+                //TODO check error?
+                if let metadata = metadata {
+                    file.modifiedAt = metadata.serverModified
+                }
+            })
+            return;
+        }
+        
+        client.files.uploadSessionAppend(sessionId: sessionId, offset: offset, body: chunk).response({[weak self] (success, error) in
+            //TODO: check error
+            self?.appendChunk(file, pOffset: offset, chunkSize: chunkSize, sessionId: sessionId, client: client)
+        })
+    }
+    
+    func dataChunk(file:DropboxFile, offset:UInt64, chunkSize:Int)->NSData?{
         guard let data = NSData(contentsOfFile: file.path) else{
             return nil
         }
-        let length = data.length
+        let length:Int = data.length
+        let of:Int = Int(offset)
 
-        let thisChunkSize = length - offset > chunkSize ? chunkSize : length - offset;
-    
-        var chunk = NSData(bytesNoCopy: data.bytes + offset, length: thisChunkSize, freeWhenDone: false)
-        
+        let thisChunkSize = length - of > chunkSize ? chunkSize : length - of;
+        var chunk = data.subdataWithRange(NSMakeRange(of, thisChunkSize))
+
         return chunk;
     }
-
 }
 
 
