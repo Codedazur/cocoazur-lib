@@ -109,33 +109,11 @@ class DropboxProxy{
         }
     }
     func upload(file:DropboxFile, with client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
-        let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
+        
         if(exceedsChunkSize(file.path)){
-            
-            var offset:UInt64 = 0
-            //TODO: create the upload using session
-            guard let chunk = dataChunk(file, offset: offset, chunkSize: chunkSize) else{
-                //TODO: some error?
-                return;
-            }
-            
-            client.files.uploadSessionStart(body: chunk).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
-            }).response({[weak self] (sessionStartResult, error) in
-                
-            })
+            self.downloadInChunks(file, client: client, completion: completion)
         }else{
-            
-            client.files.upload(path: file.folder, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
-            }).response({[weak self] (fileMetadata, error) in
-                
-                // TODO: do soemthing with error
-                if let date = fileMetadata?.serverModified{
-                    file.modifiedAt = date
-                }
-                completion(file)
-            })
+            self.downloadCompleteFile(file, client: client, completion: completion)
         }
     }
     // Mark: helpers
@@ -193,8 +171,35 @@ class DropboxProxy{
             }
         }
     }
-    
-    func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:Int, sessionId:String, client:DropboxClient)->Void{
+    func downloadCompleteFile(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
+        let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
+        client.files.upload(path: file.folder, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+            self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
+            }).response({[weak self] (fileMetadata, error) in
+                
+                // TODO: do soemthing with error
+                if let date = fileMetadata?.serverModified{
+                    file.modifiedAt = date
+                }
+                completion(file)
+        })
+    }
+    func downloadInChunks(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
+        var offset:UInt64 = 0
+        //TODO: create the upload using session
+        guard let chunk = dataChunk(file, offset: offset, chunkSize: chunkSize) else{
+            //TODO: some error?
+            return;
+        }
+        
+        client.files.uploadSessionStart(body: chunk).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+            self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
+            }).response({[weak self] (sessionStartResult, error) in
+                guard let s = self, let session = sessionStartResult else{ return;}//TODO: return if self released?
+                self?.appendChunk(file, pOffset: offset, chunkSize: s.chunkSize, sessionId: session.sessionId, client: client,completion: completion)
+        })
+    }
+    func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:Int, sessionId:String, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         var offset = pOffset + 1
         guard let chunk = self.dataChunk(file, offset: offset, chunkSize: chunkSize) else{
             //TODO: some error?
@@ -203,13 +208,14 @@ class DropboxProxy{
                 if let metadata = metadata {
                     file.modifiedAt = metadata.serverModified
                 }
+                completion(file)
             })
             return;
         }
         
         client.files.uploadSessionAppend(sessionId: sessionId, offset: offset, body: chunk).response({[weak self] (success, error) in
             //TODO: check error
-            self?.appendChunk(file, pOffset: offset, chunkSize: chunkSize, sessionId: sessionId, client: client)
+            self?.appendChunk(file, pOffset: offset, chunkSize: chunkSize, sessionId: sessionId, client: client, completion: completion)
         })
     }
     
