@@ -203,7 +203,8 @@ class DropboxProxy{
         var offset = pOffset + 1
         guard let chunk = self.dataChunk(file, offset: offset, chunkSize: chunkSize) else{
             //TODO: some error?
-            client.files.uploadSessionFinish(cursor: Files.UploadSessionCursor(sessionId: sessionId, offset: 150),commit: Files.CommitInfo(path: file.remotePath),body:NSData()).response({ (metadata, error) in
+            //TODO: offset in cursor???
+            client.files.uploadSessionFinish(cursor: Files.UploadSessionCursor(sessionId: sessionId, offset: 150/* !!! */),commit: Files.CommitInfo(path: file.remotePath),body:NSData()).response({ (metadata, error) in
                 //TODO check error?
                 if let metadata = metadata {
                     file.modifiedAt = metadata.serverModified
