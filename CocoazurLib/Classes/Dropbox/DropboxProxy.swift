@@ -15,7 +15,7 @@ enum DropBoxResultType:String{
     case SingleLink
     case MultipleLinks
 }
-class DropboxFile{
+public class DropboxFile{
     var id:String = "";
     var path:String = "";
     var folder:String = "";
@@ -32,10 +32,10 @@ class DropboxFile{
         }
     }
 }
-protocol DropboxProxyDelegate:class{
+public protocol DropboxProxyDelegate:class{
     
 }
-class DropboxProxy{
+public class DropboxProxy{
     public var chunkSize = 150*1024*1024
     private var completedUploads = 0
     private var totalUplads = 0
@@ -50,12 +50,12 @@ class DropboxProxy{
     }
     public weak var delegate:DropboxProxyDelegate?
     /*
- 
+     
      - shareable link per uploaded file
      - shareable link to uploaded folder
      - upload to folder
      - upload to root
- */
+     */
     public static func setup()->Void{
         guard let key = appKey() else{
             assert(false, "You need to provide Dropbox appkey in info.pilst")
@@ -67,7 +67,7 @@ class DropboxProxy{
         totalUplads = files.count
         completedUploads = 0
         self.completion = completion
-
+        
         
         if let client = Dropbox.authorizedClient {
             
@@ -82,9 +82,9 @@ class DropboxProxy{
                             self?.completedUploads++
                             self?.checkUploadFinished()
                         })
-                    })
+                        })
                 }
-            });
+                });
             
         }else{
             Dropbox.authorizeFromController(context)
@@ -198,10 +198,10 @@ class DropboxProxy{
                     file.modifiedAt = date
                 }
                 completion(file)
-        })
+                })
     }
     func downloadInChunks(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
-        var offset:UInt64 = 0
+        let offset:UInt64 = 0
         //TODO: create the upload using session
         guard let chunk = dataChunk(file, offset: offset, chunkSize: chunkSize) else{
             //TODO: some error?
@@ -213,10 +213,10 @@ class DropboxProxy{
             }).response({[weak self] (sessionStartResult, error) in
                 guard let s = self, let session = sessionStartResult else{ return;}//TODO: return if self released?
                 self?.appendChunk(file, pOffset: offset + 1, chunkSize: s.chunkSize, sessionId: session.sessionId, client: client,completion: completion)
-        })
+                })
     }
     func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:Int, sessionId:String, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
-        var offset = pOffset
+        let offset = pOffset
         guard let chunk = self.dataChunk(file, offset: offset, chunkSize: chunkSize) else{
             //TODO: some error?
             //TODO: offset in cursor???
@@ -234,7 +234,7 @@ class DropboxProxy{
             //TODO: check error
             //TODO: build in retries
             self?.appendChunk(file, pOffset: offset + 1, chunkSize: chunkSize, sessionId: sessionId, client: client, completion: completion)
-        })
+            })
     }
     
     func dataChunk(file:DropboxFile, offset:UInt64, chunkSize:Int)->NSData?{
@@ -243,10 +243,10 @@ class DropboxProxy{
         }
         let length:Int = data.length
         let of:Int = Int(offset)
-
+        
         let thisChunkSize = length - of > chunkSize ? chunkSize : length - of;
-        var chunk = data.subdataWithRange(NSMakeRange(of, thisChunkSize))
-
+        let chunk = data.subdataWithRange(NSMakeRange(of, thisChunkSize))
+        
         return chunk;
     }
     private static func appKey()->String?{

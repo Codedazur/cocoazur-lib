@@ -1,6 +1,5 @@
 import UIKit
 import XCTest
-import CocoazurLib
 
 class Tests: XCTestCase {
     
@@ -15,7 +14,7 @@ class Tests: XCTestCase {
     }
     
     func testExample() {
-        var p:DropboxProxy = DropboxProxy()
+        
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }

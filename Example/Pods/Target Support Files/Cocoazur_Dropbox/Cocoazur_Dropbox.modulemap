@@ -1,0 +1,6 @@
+framework module Cocoazur_Dropbox {
+  umbrella header "Cocoazur_Dropbox-umbrella.h"
+
+  export *
+  module * { export * }
+}
