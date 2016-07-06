@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyDropbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,7 +41,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        if let authResult = Dropbox.handleRedirectURL(url) {
+            switch authResult {
+            case .Success(let token):
+                print("Success! User is logged into Dropbox with token: \(token)")
+            case .Error(let error, let description):
+                print("Error \(error): \(description)")
+            }
+        }
+        
+        return false
+    }
 
-
+//    #pragma mark - Dropbox session delegate methods
+//    - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+//    if ([[DBSession sharedSession] handleOpenURL:url]) {
+//    if ([[DBSession sharedSession] isLinked]) {
+//    NSNotification *note = [NSNotification notificationWithName:KVDropboxDidLinkNotificaiton object:self userInfo:nil];
+//    [[NSNotificationCenter defaultCenter] postNotification:note];
+//    }
+//    
+//    return YES;
+//    }
+//    
+//    return NO;
+//    }
 }
 

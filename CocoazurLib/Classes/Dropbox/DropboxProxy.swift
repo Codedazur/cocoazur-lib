@@ -10,27 +10,28 @@ import Foundation
 import SwiftyDropbox
 import UIKit
 
-enum DropBoxResultType:String{
+public enum DropBoxResultType:String{
     case None
     case SingleLink
     case MultipleLinks
 }
 public class DropboxFile{
-    var id:String = "";
-    var path:String = "";
-    var folder:String = "";
-    var reupload:Bool = false;//TODO change to overwrite
-    var modifiedAt:NSDate = NSDate()
-    var name:String{
+    public var id:String = "";
+    public var path:String = "";
+    public var folder:String = "";
+    public var reupload:Bool = false;//TODO change to overwrite
+    public var modifiedAt:NSDate = NSDate()
+    public var name:String{
         get{
             return (path as NSString).lastPathComponent
         }
     }
-    var remotePath:String{
+    public var remotePath:String{
         get{
             return path.stringByAppendingString("/").stringByAppendingString(name)
         }
     }
+    public init() { }
 }
 public protocol DropboxProxyDelegate:class{
     
@@ -56,13 +57,14 @@ public class DropboxProxy{
      - upload to folder
      - upload to root
      */
+    public init() { }
     public static func setup()->Void{
         guard let key = appKey() else{
             assert(false, "You need to provide Dropbox appkey in info.pilst")
         }
         Dropbox.setupWithAppKey(key)
     }
-    func upload(files:[DropboxFile], using context:UIViewController,to folder:String = "", returning type:DropBoxResultType = .None, completion: (shareableLinks: [String]) -> Void)->Void{
+    public func upload(files:[DropboxFile], using context:UIViewController,to folder:String = "", returning type:DropBoxResultType = .None, completion: (shareableLinks: [String]) -> Void)->Void{
         shareableLinks = []
         totalUplads = files.count
         completedUploads = 0
@@ -134,7 +136,7 @@ public class DropboxProxy{
         var filesToUpload:[DropboxFile] = []
         var index = 0
         let checkFinished = {
-            if(index == files.count - 1){
+            if(index == files.count){
                 completion(filesToUpload)
             }
         }

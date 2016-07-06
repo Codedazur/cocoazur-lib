@@ -11,9 +11,10 @@ import Cocoazur_Dropbox
 
 class ViewController: UIViewController {
 
+    var dbProxy:DropboxProxy = DropboxProxy()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        DropboxProxy.setup()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +22,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onDropboxTap(sender: AnyObject) {
+        dbProxy = DropboxProxy()
+        guard let path = NSBundle.mainBundle().pathForResource("code-dazur-logo", ofType: "svg") else {return}
+        
+        let f = DropboxFile()
+        f.path = path
+        f.reupload = true
+        
+        dbProxy.upload([f], using: self, to: "", returning: DropBoxResultType.None) { (shareableLinks) in
+            
+        }
+    }
 }
 
