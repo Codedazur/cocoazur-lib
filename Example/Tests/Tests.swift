@@ -1,7 +1,6 @@
 import UIKit
 import XCTest
 import CocoazurLib
-import CDADropbox
 
 class Tests: XCTestCase {
     

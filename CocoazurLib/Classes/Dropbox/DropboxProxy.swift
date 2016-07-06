@@ -40,7 +40,8 @@ class DropboxProxy{
     private var completedUploads = 0
     private var totalUplads = 0
     private var currentUploadProgress = 0.0
-    
+    private var shareableLinks:[String] = []
+    private var completion:((shareableLinks: [String]) -> Void)?
     
     public var progress:Double{
         get{
@@ -55,51 +56,32 @@ class DropboxProxy{
      - upload to folder
      - upload to root
  */
-    
-    func upload(files:[DropboxFile], using context:UIViewController,to folder:String = "", returning type:DropBoxResultType = .None, completion: (shareableLinks: [String]) -> Void)->Void{
-        
-        totalUplads = files.count
-        let checkFinished = {[weak self] in
-            guard let completed = self?.completedUploads, let total = self?.totalUplads else{
-                return;
-            }
-            if(completed == total-1){
-                completion(shareableLinks: [])
-            }
+    public static func setup()->Void{
+        guard let key = appKey() else{
+            assert(false, "You need to provide Dropbox appkey in info.pilst")
         }
+        Dropbox.setupWithAppKey(key)
+    }
+    func upload(files:[DropboxFile], using context:UIViewController,to folder:String = "", returning type:DropBoxResultType = .None, completion: (shareableLinks: [String]) -> Void)->Void{
+        shareableLinks = []
+        totalUplads = files.count
+        completedUploads = 0
+        self.completion = completion
+
         
         if let client = Dropbox.authorizedClient {
             
-            var shareableLinks:[String] = []
             getFilesToUpload(files, client: client, completion: {[weak self] (files) in
                 
                 for file in files{
                     self?.upload(file, with: client, completion: {[weak self] (filePath) in
-                        
-                        if(type != .None){
-                            
-                            guard let remotePath = self?.remoteShareablePath(type, current: file, all: files, to: folder), let ask = self?.shouldAskForShareableLink(type) else{
-                                self?.completedUploads++
-                                checkFinished()
-                                return;
+                        self?.getSharableLink(files, file: file, client: client, returning: type, completion: { (sharableLink) in
+                            if let link = sharableLink{
+                                self?.shareableLinks.append(link)
                             }
-
-                            if(!ask){
-                                self?.completedUploads++
-                            }else{
-                                client.sharing.createSharedLink(path: remotePath).response({ (linkMetadata, error) in
-                                    if let link = linkMetadata?.url{
-                                        shareableLinks.append(link)
-                                    }
-                                    self?.completedUploads++
-                                    checkFinished()
-                                })
-                            }
-                            
-                        }else{
-                            self?.completedUploads++;
-                            checkFinished()
-                        }
+                            self?.completedUploads++
+                            self?.checkUploadFinished()
+                        })
                     })
                 }
             });
@@ -116,7 +98,17 @@ class DropboxProxy{
             self.downloadCompleteFile(file, client: client, completion: completion)
         }
     }
+    
+    
     // Mark: helpers
+    func checkUploadFinished()->Void{
+        guard let _completion = completion else{
+            return;
+        }
+        if(self.completedUploads == self.totalUplads-1){
+            _completion(shareableLinks: shareableLinks)
+        }
+    }
     func remoteShareablePath(type:DropBoxResultType, current file:DropboxFile, all files:[DropboxFile], to folder:String)->String?{
         var remotePath:String?;
         if(type == .MultipleLinks){
@@ -171,6 +163,30 @@ class DropboxProxy{
             }
         }
     }
+    func getSharableLink(files:[DropboxFile], file:DropboxFile, client:DropboxClient, to folder:String = "", returning type:DropBoxResultType, completion: (_: String?) -> Void)->Void{
+        
+        if(type != .None){
+            guard let remotePath = self.remoteShareablePath(type, current: file, all: files, to: folder) else{
+                completion(nil)
+                return
+            }
+            let shouldAsk = self.shouldAskForShareableLink(type)
+            
+            if(!shouldAsk){
+                completion(nil)
+            }else{
+                client.sharing.createSharedLink(path: remotePath).response({ (linkMetadata, error) in
+                    guard let link = linkMetadata?.url else{
+                        completion(nil)
+                        return
+                    }
+                    completion(link)
+                })
+            }
+        }else{
+            completion(nil)
+        }
+    }
     func downloadCompleteFile(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
         client.files.upload(path: file.folder, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
@@ -196,11 +212,11 @@ class DropboxProxy{
             self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
             }).response({[weak self] (sessionStartResult, error) in
                 guard let s = self, let session = sessionStartResult else{ return;}//TODO: return if self released?
-                self?.appendChunk(file, pOffset: offset, chunkSize: s.chunkSize, sessionId: session.sessionId, client: client,completion: completion)
+                self?.appendChunk(file, pOffset: offset + 1, chunkSize: s.chunkSize, sessionId: session.sessionId, client: client,completion: completion)
         })
     }
     func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:Int, sessionId:String, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
-        var offset = pOffset + 1
+        var offset = pOffset
         guard let chunk = self.dataChunk(file, offset: offset, chunkSize: chunkSize) else{
             //TODO: some error?
             //TODO: offset in cursor???
@@ -216,7 +232,8 @@ class DropboxProxy{
         
         client.files.uploadSessionAppend(sessionId: sessionId, offset: offset, body: chunk).response({[weak self] (success, error) in
             //TODO: check error
-            self?.appendChunk(file, pOffset: offset, chunkSize: chunkSize, sessionId: sessionId, client: client, completion: completion)
+            //TODO: build in retries
+            self?.appendChunk(file, pOffset: offset + 1, chunkSize: chunkSize, sessionId: sessionId, client: client, completion: completion)
         })
     }
     
@@ -231,6 +248,20 @@ class DropboxProxy{
         var chunk = data.subdataWithRange(NSMakeRange(of, thisChunkSize))
 
         return chunk;
+    }
+    private static func appKey()->String?{
+        guard let db = dbInfo() else{
+            assert(false, "You need to provide Dropbox appkey in info.pilst")
+            return nil
+        }
+        return db["app-key"]
+    }
+    private static func dbInfo()->[String : String]?{
+        guard let info = NSBundle.mainBundle().infoDictionary else{
+            assert(false, "You need to provide Dropbox appkey in info.pilst")
+            return nil
+        }
+        return info["Dropbox"] as! [String : String]?
     }
 }
 
