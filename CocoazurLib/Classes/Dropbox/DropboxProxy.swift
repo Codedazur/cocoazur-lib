@@ -96,9 +96,9 @@ public class DropboxProxy{
     func upload(file:DropboxFile, with client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         
         if(exceedsChunkSize(file.path)){
-            self.downloadInChunks(file, client: client, completion: completion)
+            self.uploadInChunks(file, client: client, completion: completion)
         }else{
-            self.downloadCompleteFile(file, client: client, completion: completion)
+            self.uploadCompleteFile(file, client: client, completion: completion)
         }
     }
     
@@ -190,7 +190,7 @@ public class DropboxProxy{
             completion(nil)
         }
     }
-    func downloadCompleteFile(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
+    func uploadCompleteFile(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
         client.files.upload(path: file.remotePath, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
             self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
@@ -204,7 +204,7 @@ public class DropboxProxy{
                 completion(file)
                 })
     }
-    func downloadInChunks(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
+    func uploadInChunks(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         let offset:UInt64 = 0
         //TODO: create the upload using session
         guard let chunk = dataChunk(file, offset: offset, chunkSize: chunkSize) else{
