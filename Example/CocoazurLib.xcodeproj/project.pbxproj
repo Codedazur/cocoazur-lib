@@ -17,6 +17,9 @@
 		634F19721D2D3AAC00363F58 /* Cocoazur_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634F19701D2D3AAC00363F58 /* Cocoazur_Core.framework */; };
 		634F19731D2D3AAC00363F58 /* Cocoazur_Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634F19711D2D3AAC00363F58 /* Cocoazur_Dropbox.framework */; };
 		634F19761D2D3FF900363F58 /* code-dazur-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 634F19751D2D3FF900363F58 /* code-dazur-logo.svg */; };
+		636302851D2E50440066321D /* code-dazur-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 634F19751D2D3FF900363F58 /* code-dazur-logo.svg */; };
+		636F78FE1D2FB1B4007694F8 /* code-dazur-logo2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 636F78FD1D2FB1B4007694F8 /* code-dazur-logo2.svg */; };
+		636F78FF1D2FB1B4007694F8 /* code-dazur-logo2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 636F78FD1D2FB1B4007694F8 /* code-dazur-logo2.svg */; };
 		B9313C0AD2EE4752F2ACB19A /* Pods_CocoazurLib_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1370213669C11DB6477FF27B /* Pods_CocoazurLib_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,7 @@
 		634F19701D2D3AAC00363F58 /* Cocoazur_Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoazur_Core.framework; path = "../../../../Library/Developer/Xcode/DerivedData/CocoazurLib-eythstxoaivxflccmllmslcbjamn/Build/Products/Debug-iphonesimulator/Cocoazur_Core/Cocoazur_Core.framework"; sourceTree = "<group>"; };
 		634F19711D2D3AAC00363F58 /* Cocoazur_Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoazur_Dropbox.framework; path = "../../../../Library/Developer/Xcode/DerivedData/CocoazurLib-eythstxoaivxflccmllmslcbjamn/Build/Products/Debug-iphonesimulator/Cocoazur_Dropbox/Cocoazur_Dropbox.framework"; sourceTree = "<group>"; };
 		634F19751D2D3FF900363F58 /* code-dazur-logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "code-dazur-logo.svg"; sourceTree = "<group>"; };
+		636F78FD1D2FB1B4007694F8 /* code-dazur-logo2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "code-dazur-logo2.svg"; sourceTree = "<group>"; };
 		6D9097AB8FE9D34673BC9A8E /* Pods-CocoazurLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoazurLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoazurLib_Example/Pods-CocoazurLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		97B37BC102879B34DFFF05CC /* CocoazurLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CocoazurLib.podspec; path = ../CocoazurLib.podspec; sourceTree = "<group>"; };
 		9BEC0D919F717682CA8EA086 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		634F19741D2D3FF900363F58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				636F78FD1D2FB1B4007694F8 /* code-dazur-logo2.svg */,
 				634F19751D2D3FF900363F58 /* code-dazur-logo.svg */,
 			);
 			path = Resources;
@@ -269,6 +274,7 @@
 				634F19761D2D3FF900363F58 /* code-dazur-logo.svg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				636F78FE1D2FB1B4007694F8 /* code-dazur-logo2.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636F78FF1D2FB1B4007694F8 /* code-dazur-logo2.svg in Resources */,
+				636302851D2E50440066321D /* code-dazur-logo.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10677F9FA04B139D4DE1B6EC /* Pods-CocoazurLib_Tests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -546,6 +555,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoazurLib_Example.app/CocoazurLib_Example";
 			};
 			name = Debug;
 		};
@@ -553,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C4A8EF262EBE159A7A9F297 /* Pods-CocoazurLib_Tests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -561,6 +572,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CocoazurLib_Example.app/CocoazurLib_Example";
 			};
 			name = Release;
 		};

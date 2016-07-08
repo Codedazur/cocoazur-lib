@@ -16,11 +16,15 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testSingleFileUnderSizeLimit() {
         
         let expectation = expectationWithDescription("Swift Expectations")
         
-        guard let path = NSBundle.mainBundle().pathForResource("code-dazur-logo", ofType: "svg") else {return}
+        
+        guard let path = NSBundle.mainBundle().pathForResource("code-dazur-logo", ofType: "svg") else {
+            XCTAssert(false)
+            return
+        }
         
         let f = DropboxFile()
         f.path = path
@@ -31,7 +35,38 @@ class Tests: XCTestCase {
             XCTAssert(true)
         }
         
-        waitForExpectationsWithTimeout(10) { (error) in
+        waitForExpectationsWithTimeout(20.0) { (error) in
+            
+        }
+    }
+    func testSeveralFileUnderSizeLimit() {
+        
+        let expectation = expectationWithDescription("Swift Expectations")
+        
+        
+        guard let path = NSBundle.mainBundle().pathForResource("code-dazur-logo", ofType: "svg") else {
+            XCTAssert(false)
+            return
+        }
+        guard let path2 = NSBundle.mainBundle().pathForResource("code-dazur-logo2", ofType: "svg") else {
+            XCTAssert(false)
+            return
+        }
+        
+        let f = DropboxFile()
+        f.path = path
+        f.reupload = true
+        
+        let f2 = DropboxFile()
+        f2.path = path2
+        f2.reupload = true
+        
+        sut.upload([f,f2], using: UIViewController(), to: "", returning: DropBoxResultType.None) { (shareableLinks) in
+            expectation.fulfill()
+            XCTAssert(true)
+        }
+        
+        waitForExpectationsWithTimeout(20.0) { (error) in
             
         }
     }

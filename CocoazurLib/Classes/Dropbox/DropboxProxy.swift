@@ -21,6 +21,7 @@ public class DropboxFile{
     public var folder:String = "";
     public var reupload:Bool = false;//TODO change to overwrite
     public var modifiedAt:NSDate = NSDate()
+    
     public var name:String{
         get{
             return (path as NSString).lastPathComponent
@@ -28,7 +29,7 @@ public class DropboxFile{
     }
     public var remotePath:String{
         get{
-            return path.stringByAppendingString("/").stringByAppendingString(name)
+            return folder.stringByAppendingString("/").stringByAppendingString(name)
         }
     }
     public init() { }
@@ -84,7 +85,7 @@ public class DropboxProxy{
                             self?.completedUploads++
                             self?.checkUploadFinished()
                         })
-                        })
+                    })
                 }
                 });
             
@@ -107,7 +108,7 @@ public class DropboxProxy{
         guard let _completion = completion else{
             return;
         }
-        if(self.completedUploads == self.totalUplads-1){
+        if(self.completedUploads == self.totalUplads){
             _completion(shareableLinks: shareableLinks)
         }
     }
@@ -191,9 +192,10 @@ public class DropboxProxy{
     }
     func downloadCompleteFile(file:DropboxFile, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         let url = NSURL(fileURLWithPath: file.path, isDirectory: false)
-        client.files.upload(path: file.folder, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+        client.files.upload(path: file.remotePath, body: url).progress({[weak self] (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
             self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
             }).response({[weak self] (fileMetadata, error) in
+                
                 
                 // TODO: do soemthing with error
                 if let date = fileMetadata?.serverModified{
