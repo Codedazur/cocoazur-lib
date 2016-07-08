@@ -70,4 +70,30 @@ class Tests: XCTestCase {
             
         }
     }
+    
+    func testSingleFileAboveSizeLimit() {
+        
+        let expectation = expectationWithDescription("Swift Expectations")
+        
+        
+        guard let path = NSBundle.mainBundle().pathForResource("test-large-file", ofType: "pdf") else {
+            XCTAssert(false)
+            return
+        }        
+        let f = DropboxFile()
+        f.path = path
+        f.reupload = true
+        
+        let size:UInt64 = 10*1024*1024
+        sut.chunkSize = size
+        sut.maxFileSize = size
+        sut.upload([f], using: UIViewController(), to: "", returning: DropBoxResultType.None) { (shareableLinks) in
+            expectation.fulfill()
+            XCTAssert(true)
+        }
+        
+        waitForExpectationsWithTimeout(600.0) { (error) in
+            
+        }
+    }
 }

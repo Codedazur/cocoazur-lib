@@ -21,6 +21,7 @@ public class DropboxFile{
     public var folder:String = "";
     public var reupload:Bool = false;//TODO change to overwrite
     public var modifiedAt:NSDate = NSDate()
+    public var fileSize:UInt64 = 0
     
     public var name:String{
         get{
@@ -38,7 +39,8 @@ public protocol DropboxProxyDelegate:class{
     
 }
 public class DropboxProxy{
-    public var chunkSize = 150*1024*1024
+    public var chunkSize:UInt64 = 150*1024*1024
+    public var maxFileSize:UInt64 = 150*1024*1024
     private var completedUploads = 0
     private var totalUplads = 0
     private var currentUploadProgress = 0.0
@@ -95,7 +97,7 @@ public class DropboxProxy{
     }
     func upload(file:DropboxFile, with client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         
-        if(exceedsChunkSize(file.path)){
+        if(exceedsFileSize(file.fileSize)){
             self.uploadInChunks(file, client: client, completion: completion)
         }else{
             self.uploadCompleteFile(file, client: client, completion: completion)
@@ -124,14 +126,21 @@ public class DropboxProxy{
     func shouldAskForShareableLink(type:DropBoxResultType)->Bool{
         return type == .MultipleLinks || (type == .SingleLink && self.completedUploads == totalUplads-1)
     }
-    func exceedsChunkSize(file:String)->Bool{
+    func exceedsFileSize(fileSize:UInt64)->Bool{
+        return fileSize > maxFileSize
+    }
+    func getFileSize(file:String)->UInt64{
         let attr:NSDictionary?
         do {
             attr = try NSFileManager.defaultManager().attributesOfItemAtPath(file)
         } catch _ {
             attr = nil
         }
-        return attr?.fileSize() > 150 * 1024
+        var fileSize:UInt64 = 0
+        if let _attr = attr{
+            fileSize = _attr.fileSize()
+        }
+        return fileSize;
     }
     func getFilesToUpload(files:[DropboxFile], client:DropboxClient, completion: (_: [DropboxFile]) -> Void)->Void{
         var filesToUpload:[DropboxFile] = []
@@ -142,6 +151,7 @@ public class DropboxProxy{
             }
         }
         for dbFile in files {
+            dbFile.fileSize = getFileSize(dbFile.path)
             
             if(!dbFile.reupload){
                 let destination = dbFile.folder.stringByAppendingString(dbFile.name)
@@ -216,40 +226,47 @@ public class DropboxProxy{
             self?.currentUploadProgress = Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)
             }).response({[weak self] (sessionStartResult, error) in
                 guard let s = self, let session = sessionStartResult else{ return;}//TODO: return if self released?
-                self?.appendChunk(file, pOffset: offset + 1, chunkSize: s.chunkSize, sessionId: session.sessionId, client: client,completion: completion)
-                })
+                
+                self?.appendChunk(file,
+                    pOffset: offset + UInt64(chunk.length),
+                    chunkSize: s.chunkSize,
+                    sessionId: session.sessionId,
+                    client: client,
+                    completion: completion)
+            })
     }
-    func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:Int, sessionId:String, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
+    func appendChunk(file:DropboxFile, pOffset:UInt64, chunkSize:UInt64, sessionId:String, client:DropboxClient, completion: (_: DropboxFile) -> Void)->Void{
         let offset = pOffset
         guard let chunk = self.dataChunk(file, offset: offset, chunkSize: chunkSize) else{
-            //TODO: some error?
-            //TODO: offset in cursor???
-            client.files.uploadSessionFinish(cursor: Files.UploadSessionCursor(sessionId: sessionId, offset: 150/* !!! */),commit: Files.CommitInfo(path: file.remotePath),body:NSData()).response({ (metadata, error) in
+            //TODO: error????
+            return;
+        }
+        if(offset < file.fileSize){
+            client.files.uploadSessionAppend(sessionId: sessionId, offset: offset, body: chunk).response({[weak self] (success, error) in
+                //TODO: check error
+                //TODO: build in retries
+                self?.appendChunk(file, pOffset: offset + UInt64(chunk.length), chunkSize: chunkSize, sessionId: sessionId, client: client, completion: completion)
+                })
+        }else{
+            client.files.uploadSessionFinish(cursor: Files.UploadSessionCursor(sessionId: sessionId, offset: offset),commit: Files.CommitInfo(path: file.remotePath),body:NSData()).response({ (metadata, error) in
                 //TODO check error?
                 if let metadata = metadata {
                     file.modifiedAt = metadata.serverModified
                 }
                 completion(file)
             })
-            return;
+
         }
-        
-        client.files.uploadSessionAppend(sessionId: sessionId, offset: offset, body: chunk).response({[weak self] (success, error) in
-            //TODO: check error
-            //TODO: build in retries
-            self?.appendChunk(file, pOffset: offset + 1, chunkSize: chunkSize, sessionId: sessionId, client: client, completion: completion)
-            })
     }
     
-    func dataChunk(file:DropboxFile, offset:UInt64, chunkSize:Int)->NSData?{
+    func dataChunk(file:DropboxFile, offset:UInt64, chunkSize:UInt64)->NSData?{
         guard let data = NSData(contentsOfFile: file.path) else{
             return nil
         }
-        let length:Int = data.length
-        let of:Int = Int(offset)
+        let length:UInt64 = UInt64(data.length)
         
-        let thisChunkSize = length - of > chunkSize ? chunkSize : length - of;
-        let chunk = data.subdataWithRange(NSMakeRange(of, thisChunkSize))
+        let thisChunkSize = length - offset > chunkSize ? chunkSize : length - offset;
+        let chunk = data.subdataWithRange(NSMakeRange(Int(offset), Int(thisChunkSize)))
         
         return chunk;
     }
