@@ -12,8 +12,8 @@ import UIKit
 /**
  Gives the ability to create a UIColor from the raw value (in case of enum int)
  */
-protocol EnumColorable : RawRepresentable {}
-extension EnumColorable {
+public protocol EnumColorable : RawRepresentable {}
+public extension EnumColorable {
     func colorValue() -> UIColor? {
         if let hex: Int = self.rawValue as? Int {
             return UIColor(hex: hex);

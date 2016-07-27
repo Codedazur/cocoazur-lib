@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension UIButton {
+public extension UIButton {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";

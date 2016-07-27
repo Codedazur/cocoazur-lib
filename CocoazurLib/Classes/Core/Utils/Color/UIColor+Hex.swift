@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension UIColor {
+public extension UIColor {
     /**
      Adds the ability to create a Colour from an hexadecimal code
     */

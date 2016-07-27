@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITextView {
+public extension UITextView {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";

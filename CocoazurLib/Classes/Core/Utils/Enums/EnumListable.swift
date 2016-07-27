@@ -12,8 +12,8 @@ import Foundation
  Gives an enum the ability to list all its cases and raw values
  Thansk to Kametrixom @ http://stackoverflow.com/a/32429125/1387646
  */
-protocol EnumListable : Hashable, RawRepresentable {}
-extension EnumListable {
+public protocol EnumListable : Hashable, RawRepresentable {}
+public extension EnumListable {
     
     static func cases() -> AnySequence<Self> {
         typealias S = Self

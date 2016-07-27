@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension UILabel {
+public extension UILabel {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";

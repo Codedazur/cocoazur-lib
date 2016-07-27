@@ -9,6 +9,6 @@
 import Foundation
 
 
-class Theme {
+public class Theme {
     static var currentTheme: Themeable?
 }

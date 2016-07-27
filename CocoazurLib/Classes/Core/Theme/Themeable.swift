@@ -10,7 +10,7 @@
 import UIKit
 
 
-protocol Themeable {
+public protocol Themeable {
     func styleLabel(label: UILabel, withStyle style: String);
     func styleTextView(textView: UITextView, withStyle style: String);
     func styleTextField(textField: UITextField, withStyle style: String);

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ImplementationError: ErrorType {
+public enum ImplementationError: ErrorType {
     case Abstract
     
     static func abstract () {
