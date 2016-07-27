@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F6F229AC3014187F19EFD16 /* Pods_CocoazurLib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4CB8DD1FF2DA6C18E675BA /* Pods_CocoazurLib_Tests.framework */; };
+		563106371D48D091005E3ACB /* cda-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 563106361D48D091005E3ACB /* cda-image.png */; };
+		5631063B1D48D0D7005E3ACB /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		1370213669C11DB6477FF27B /* Pods_CocoazurLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoazurLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6702E38211E253A1E95DED /* Pods-CocoazurLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoazurLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoazurLib_Example/Pods-CocoazurLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3C4A8EF262EBE159A7A9F297 /* Pods-CocoazurLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoazurLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoazurLib_Tests/Pods-CocoazurLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		563106361D48D091005E3ACB /* cda-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cda-image.png"; sourceTree = "<group>"; };
+		5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
 		5E4CB8DD1FF2DA6C18E675BA /* Pods_CocoazurLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoazurLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CocoazurLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoazurLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		563106391D48D0D7005E3ACB /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		607FACD21AFB9204008FA782 /* Example for CocoazurLib */ = {
 			isa = PBXGroup;
 			children = (
+				563106391D48D0D7005E3ACB /* Theme */,
 				634F19741D2D3FF900363F58 /* Resources */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
@@ -172,6 +185,7 @@
 				636F78FD1D2FB1B4007694F8 /* code-dazur-logo2.svg */,
 				634F19751D2D3FF900363F58 /* code-dazur-logo.svg */,
 				636F79011D2FBD46007694F8 /* test-large-file.pdf */,
+				563106361D48D091005E3ACB /* cda-image.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 			files = (
 				636F79021D2FBD46007694F8 /* test-large-file.pdf in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				563106371D48D091005E3ACB /* cda-image.png in Resources */,
 				634F19761D2D3FF900363F58 /* code-dazur-logo.svg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -394,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				5631063B1D48D0D7005E3ACB /* ExampleTheme.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CocoazurLib/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -537,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CocoazurLib/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

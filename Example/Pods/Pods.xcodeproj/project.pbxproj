@@ -10,9 +10,14 @@
 		095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5065C24217526645168962B3FC4F044 /* Error.swift */; };
 		0C10C0D60C407C8D0806FD1F954341DD /* FilesRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8FD9699D0A103D1437931ABDE7FAB7 /* FilesRoutes.swift */; };
 		108C85BD51982F633A71E138D58D61C5 /* Pods-CocoazurLib_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 926DF21DA0DA34A7A96C501C3155BA2E /* Pods-CocoazurLib_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		147358C6CCE5432C720415DB348F5003 /* UIButton+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2C202BA8CD762A2006D63DEBA5662 /* UIButton+Theme.swift */; };
 		16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E8B928D93AF2E0D3D187353DF2D68 /* Timeline.swift */; };
 		1868D4824EDD502A0D6C8EBC77D5F3C8 /* SharingRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5D6FBFB247762D6531031D29C3A36 /* SharingRoutes.swift */; };
+		2105D3AE2C61BFDEEA6978DA0C7B081E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */; };
+		2227D9D2AF1815B44BEBDFBA6EA99F35 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FAB9829A0A64EBBBC125E90745ACB2 /* ReplaceMe.swift */; };
+		292508F7C294EDBE2B7DAE040BC44C0F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594138230B5F1A2664A6BBC7A6C92E7 /* Theme.swift */; };
 		2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1BF2D1A6DCA859AF4889A5AB4866A9 /* Validation.swift */; };
+		2E42E0952E0BA3FAA150208A24012B42 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56268CFE1B8C6336CC30019F9BB585E5 /* UIColor+Hex.swift */; };
 		2FBAAAF31E299E0BE4580339B6CE5A10 /* SwiftyDropbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4507B5E0E0D42AC6A2EF0D9FF3B71834 /* SwiftyDropbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3DE1434CD9DFA47E9CFD48A75874A1 /* NetworkReachabilityManager.swift */; };
 		3604E25F23D3D4E9876732D20FF559A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */; };
@@ -21,8 +26,7 @@
 		3E16F1BDE6E10D3F699C18A8D40A4762 /* SecurityUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3A4FE04F95CC6BBD84C60BC5A87572 /* SecurityUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7293C6E6EF2592A4C039B9AD24A35B /* ResponseSerialization.swift */; };
 		4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C947EF57BB01EF9F6AE1D32BD3185F6 /* Manager.swift */; };
-		42ECEEEA245ED80F504F166FD6CFB63F /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC319469DC1A1F6A820661A3D5049634 /* ReplaceMe.swift */; };
-		447DFA90B9D0EDF398CBE59E73B8FB2F /* Cocoazur_Core-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FE99D895E87640F8B5EB7F0F13E3D /* Cocoazur_Core-dummy.m */; };
+		4BDDB5EC024FFE617888524C0AB7264D /* ImplementationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE58BC84BCF70C50177DE21B4E90108 /* ImplementationError.swift */; };
 		4F821930BE1C85FAA90A6887F728162E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE99A344AC012EA787A301974ED854A /* Alamofire.framework */; };
 		5131854E6C81FB2FDA5DD275D404DDFB /* DropboxProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31919C1F1F8C3C67EF6A741B3E250F67 /* DropboxProxy.swift */; };
 		54373C4DB4511416A1C5E56B41B1AA9B /* BabelValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10619CBD5CEE837D85919E2D80928DBB /* BabelValidators.swift */; };
@@ -30,17 +34,22 @@
 		5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = E656070BDDEA95AB2D39CB28898953E2 /* Download.swift */; };
 		6029E2B1F17FD67BB27DCCAA34054AFD /* BabelSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44E2E1287BBB749591DBB19B3B0E09 /* BabelSerializers.swift */; };
 		62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0DE1A8ED026D4F527551A592EE5CD5 /* Response.swift */; };
+		6850BD745984B2F21E4E8ABE27D4B842 /* Cocoazur_Core-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E46FE99D895E87640F8B5EB7F0F13E3D /* Cocoazur_Core-dummy.m */; };
 		6B787A962DB5C6FE30C963DAADEA09AE /* Pods-CocoazurLib_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF798EC71D83F46BAA0AB7A3424F508 /* Pods-CocoazurLib_Example-dummy.m */; };
 		73303F5850575362D611B1C9812A3A2C /* Pods-CocoazurLib_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DDDEC810C124DB20E3E587E638EB8BA /* Pods-CocoazurLib_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7495D8A2FDE21833CB64523FA234B8FF /* EnumColorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590062CFDC66CD9601E519D47A37629E /* EnumColorable.swift */; };
 		79F2AA121D98AAD1A1B3BFD5F24C5A4D /* UsersRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7EF08649E263A0702C5EC25139D3D /* UsersRoutes.swift */; };
 		7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E94D47746697DEBA6E058D298BD40 /* ServerTrustPolicy.swift */; };
 		84F0C7ECA1BCC52A75A4F9C3DCE8DA6F /* Cocoazur_Dropbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FC5B576CAD66EC4DDD26823B59F5B /* Cocoazur_Dropbox-dummy.m */; };
+		88AFA22517A291A091F44483614696E3 /* UILabel+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BE62014D7469037DB5153EF6FEFC03 /* UILabel+Theme.swift */; };
 		8E85DE736547648083310DCD1B94CEAD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5ACDD7ED9F69A299F60AF7626CC17 /* Client.swift */; };
 		8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B1519D3D89208B1736CB39757D855 /* Alamofire.swift */; };
 		91C09AC2A52ED69A27C8D923139A006F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */; };
 		9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BFAC4B1E2516C2EE6F397632FB0166 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95045E4DE42264621B709D452ACDD542 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CDBBA4A7856EEF7DC31630EB02576 /* Themeable.swift */; };
 		959BC950B97D4EDFF4EA57C366BC7E6D /* SwiftyDropbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEA77FB322C748AB3C63C23B2610DF /* SwiftyDropbox-dummy.m */; };
 		96C7C0381F222D596EB4671DB28A042A /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8163EF871F52B59FABDB58CCE4A04 /* SecurityUtil.m */; };
+		9B3071E41138A618335F1B67E72B96CC /* UITextField+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64FDA027CAAF8A4A623AAA19DDC61FB /* UITextField+Theme.swift */; };
 		9CCB27C086016FF318EBC48D3B37B862 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */; };
 		A0622A0BD58E31E182F0DF7698D20156 /* DropboxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A2EFCB0083861C8989AC788C5D450 /* DropboxUtil.swift */; };
 		AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E896CFDDE008DBB87802BDEFE00F86 /* Result.swift */; };
@@ -51,20 +60,21 @@
 		B78CA9C6FBCC571F4239E20415377C60 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D11597CFB058C4E232A18EB791B896 /* Files.swift */; };
 		B9B2D1BFA27A3E9069E68666DBF6835C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B0BBFFA36216ABB0FFAE335562AB8 /* Auth.swift */; };
 		BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B40B6F94DD2DDABB23A09D072664C5 /* Notifications.swift */; };
+		BF13DFCC991734AF19A00D0BFD9F0B2D /* UITextView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108EF1663500773DF2F2128BC29865E2 /* UITextView+Theme.swift */; };
 		BFBF2B5CDFF962B139BDCC40491A4795 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE99A344AC012EA787A301974ED854A /* Alamofire.framework */; };
-		C094981F0F6DA9147A468E7668DA561B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */; };
 		C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE878AE9260383C3C24D84BFAB6793C /* ParameterEncoding.swift */; };
 		C3B35BEFB17321D57D2D8A457BE9DAEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */; };
 		C4806C7EA2012E41552FAC0B692EB104 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B6D832CF7395985AEA57762C7BC9EF /* Async.swift */; };
 		C6A1C611680837FCC50698228DF1BC85 /* SwiftyDropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2254CF4C92884C178882EFCDDDA4ABB4 /* SwiftyDropbox.framework */; };
 		C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C1ABC1B536D1491AD490921666C9A1 /* MultipartFormData.swift */; };
-		D383D125792321BB1FF7BAB98B23DE02 /* Cocoazur_Core-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B57DDC40B58D2E25102EB340AC66789 /* Cocoazur_Core-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5DFA5631B083C249E5F42D5C16BB241 /* Pods-CocoazurLib_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F62DE89F69CD147349B73B93991E579 /* Pods-CocoazurLib_Tests-dummy.m */; };
 		DC7B4FB8C104CD058C6F5402BC7ABB64 /* SwiftyDropbox.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3B7C5388D25D6D615EF1826651BDDA /* SwiftyDropbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEABDE0D951D9B4845D5CFAEB544C533 /* Cocoazur_Core-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B57DDC40B58D2E25102EB340AC66789 /* Cocoazur_Core-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2F51CAD5D15C2C648F7224356DCD7FF /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC248B675D0CA7084B0C887CF2769749 /* Team.swift */; };
 		E67C7D1132E0C6F30E6EEBFD1A9A5985 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BE6A9643DF9A99899C2C64FB944D7 /* OAuth.swift */; };
 		E8D2F150CA3A8D169E5ACEF1E4DB8564 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0BD57DCA5D92A48345D450FB4E36F /* Users.swift */; };
 		EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29984738B7C71A70419EAC2E78EAE556 /* Request.swift */; };
+		F8784E310BA7EE57344983B5558D8DF7 /* EnumListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7565FE0C8ECA93E95A4243B61AE799 /* EnumListable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,14 +138,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 96D4241F00AC774FDAE84D4BE3FD3BD1;
+			remoteGlobalIDString = D204103B9B677CA702E14F565E6DFF6F;
 			remoteInfo = Cocoazur_Core;
 		};
 		D660CE775349CC37B014E7A4DF0F3663 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 96D4241F00AC774FDAE84D4BE3FD3BD1;
+			remoteGlobalIDString = D204103B9B677CA702E14F565E6DFF6F;
 			remoteInfo = Cocoazur_Core;
 		};
 		F9F87CEE0582A11B1FB5BAB93F177602 /* PBXContainerItemProxy */ = {
@@ -157,6 +167,7 @@
 		0FA0BD57DCA5D92A48345D450FB4E36F /* Users.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Source/Users.swift; sourceTree = "<group>"; };
 		105ABCB8CC98888D28C60308CF9424BD /* Cocoazur_Dropbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cocoazur_Dropbox.xcconfig; sourceTree = "<group>"; };
 		10619CBD5CEE837D85919E2D80928DBB /* BabelValidators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BabelValidators.swift; path = Source/BabelValidators.swift; sourceTree = "<group>"; };
+		108EF1663500773DF2F2128BC29865E2 /* UITextView+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITextView+Theme.swift"; sourceTree = "<group>"; };
 		11C1ABC1B536D1491AD490921666C9A1 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		126407EFB66A6A219ED88D3B69A18F25 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14602638ACFD22E891589BCBF2EE42AC /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
@@ -166,6 +177,7 @@
 		1A4DCE2E8B04AA09BBFD536701D7ABB1 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		1B4FC5B576CAD66EC4DDD26823B59F5B /* Cocoazur_Dropbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cocoazur_Dropbox-dummy.m"; sourceTree = "<group>"; };
 		1B8FD9699D0A103D1437931ABDE7FAB7 /* FilesRoutes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FilesRoutes.swift; path = Source/FilesRoutes.swift; sourceTree = "<group>"; };
+		1BB2C202BA8CD762A2006D63DEBA5662 /* UIButton+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+Theme.swift"; sourceTree = "<group>"; };
 		1E3DE1434CD9DFA47E9CFD48A75874A1 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		1F62DE89F69CD147349B73B93991E579 /* Pods-CocoazurLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CocoazurLib_Tests-dummy.m"; sourceTree = "<group>"; };
 		2254CF4C92884C178882EFCDDDA4ABB4 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,11 +195,14 @@
 		48201AB7F1F9E81FB731054F8987EEC0 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyDropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B57DDC40B58D2E25102EB340AC66789 /* Cocoazur_Core-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cocoazur_Core-umbrella.h"; sourceTree = "<group>"; };
 		4C10B72E9FC349F951CD9EF799FCB976 /* SwiftyDropbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyDropbox.xcconfig; sourceTree = "<group>"; };
+		56268CFE1B8C6336CC30019F9BB585E5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		590062CFDC66CD9601E519D47A37629E /* EnumColorable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnumColorable.swift; sourceTree = "<group>"; };
 		5F0DE1A8ED026D4F527551A592EE5CD5 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		6A139494C48636949648FB353D3D3FFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C947EF57BB01EF9F6AE1D32BD3185F6 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		6E8A62E1B34CD3F75694572F31B1BF04 /* Cocoazur_Dropbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cocoazur_Dropbox.modulemap; sourceTree = "<group>"; };
 		6F3A4FE04F95CC6BBD84C60BC5A87572 /* SecurityUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SecurityUtil.h; path = Source/SecurityUtil.h; sourceTree = "<group>"; };
+		88BE62014D7469037DB5153EF6FEFC03 /* UILabel+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+Theme.swift"; sourceTree = "<group>"; };
 		8DDDEC810C124DB20E3E587E638EB8BA /* Pods-CocoazurLib_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CocoazurLib_Example-umbrella.h"; sourceTree = "<group>"; };
 		8EC5ACDD7ED9F69A299F60AF7626CC17 /* Client.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Source/Client.swift; sourceTree = "<group>"; };
 		926DF21DA0DA34A7A96C501C3155BA2E /* Pods-CocoazurLib_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CocoazurLib_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -200,9 +215,11 @@
 		A1D11597CFB058C4E232A18EB791B896 /* Files.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Files.swift; path = Source/Files.swift; sourceTree = "<group>"; };
 		A24B0BBFFA36216ABB0FFAE335562AB8 /* Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = Source/Auth.swift; sourceTree = "<group>"; };
 		A777F4B997F538549AC263A2F5F75F53 /* Sharing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sharing.swift; path = Source/Sharing.swift; sourceTree = "<group>"; };
+		AA3CDBBA4A7856EEF7DC31630EB02576 /* Themeable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
 		AD3F40878BE4FBDFA9D519B584A6D686 /* Pods-CocoazurLib_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoazurLib_Example-resources.sh"; sourceTree = "<group>"; };
+		B594138230B5F1A2664A6BBC7A6C92E7 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B64FDA027CAAF8A4A623AAA19DDC61FB /* UITextField+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITextField+Theme.swift"; sourceTree = "<group>"; };
 		BAF798EC71D83F46BAA0AB7A3424F508 /* Pods-CocoazurLib_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CocoazurLib_Example-dummy.m"; sourceTree = "<group>"; };
-		BC319469DC1A1F6A820661A3D5049634 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		BEE4A0EF40B52737E48009F2C9EC974F /* Pods-CocoazurLib_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoazurLib_Tests-resources.sh"; sourceTree = "<group>"; };
 		BEE99A344AC012EA787A301974ED854A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6200715B71BB6E138E4C6AB040DB6F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,11 +245,14 @@
 		E5D5D6FBFB247762D6531031D29C3A36 /* SharingRoutes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SharingRoutes.swift; path = Source/SharingRoutes.swift; sourceTree = "<group>"; };
 		E656070BDDEA95AB2D39CB28898953E2 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
 		EBFDB0250B7D34916BEE1D80CD1307B8 /* Pods-CocoazurLib_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoazurLib_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		ECE58BC84BCF70C50177DE21B4E90108 /* ImplementationError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImplementationError.swift; sourceTree = "<group>"; };
 		EE3B7C5388D25D6D615EF1826651BDDA /* SwiftyDropbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyDropbox.h; path = Source/SwiftyDropbox.h; sourceTree = "<group>"; };
+		EE7565FE0C8ECA93E95A4243B61AE799 /* EnumListable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnumListable.swift; sourceTree = "<group>"; };
 		EF1AF28AB0F3D60FDEC27537DF4C8EE4 /* Cocoazur_Core.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cocoazur_Core.modulemap; sourceTree = "<group>"; };
 		F02B1519D3D89208B1736CB39757D855 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		F436307C357BCC3D44D0231980C9A304 /* DropboxClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropboxClient.swift; path = Source/DropboxClient.swift; sourceTree = "<group>"; };
 		F69F23746FD8FF198E8077D5154A4BD5 /* Pods-CocoazurLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CocoazurLib_Example.modulemap"; sourceTree = "<group>"; };
+		F6FAB9829A0A64EBBBC125E90745ACB2 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		F7AC41B13B4A25E8EBF0176908B3F4D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FA14B58219DCB42DA34DC0AF35F591A5 /* Cocoazur_Core-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cocoazur_Core-prefix.pch"; sourceTree = "<group>"; };
 		FB7293C6E6EF2592A4C039B9AD24A35B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -250,19 +270,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B8E85D514A73AC1BA8802253E5F26A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C094981F0F6DA9147A468E7668DA561B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3123B42152F571FBB91D557C39053EDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3C14450C6EA3C97404BA99610096C443 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F8F0CDB17AF8F6239E2FF57387CCC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2105D3AE2C61BFDEEA6978DA0C7B081E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,14 +374,6 @@
 			path = SwiftyDropbox;
 			sourceTree = "<group>";
 		};
-		18424BF4201E1DC6DFC688D372A3B88C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				1B586ED6900B8EAAD03E13B63D895A6B /* Core */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		18F966ACB543B4D6C84CF5F40805EA53 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,14 +381,6 @@
 				16587C97A08822B2926383288D068F6D /* Cocoazur_Dropbox */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		1B586ED6900B8EAAD03E13B63D895A6B /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				BC319469DC1A1F6A820661A3D5049634 /* ReplaceMe.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		20000BA89B35B6050251C6E9A7A2A8EA /* Support Files */ = {
@@ -393,10 +397,18 @@
 			path = "Example/Pods/Target Support Files/Cocoazur_Dropbox";
 			sourceTree = "<group>";
 		};
+		27DCFD245C0089D53B72C82263CDDCF5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8E407737F10B0AD62EAD6B61B3152C36 /* Core */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		3B9376BAD214577F1311B94615544984 /* CocoazurLib */ = {
 			isa = PBXGroup;
 			children = (
-				18424BF4201E1DC6DFC688D372A3B88C /* Classes */,
+				27DCFD245C0089D53B72C82263CDDCF5 /* Classes */,
 			);
 			path = CocoazurLib;
 			sourceTree = "<group>";
@@ -452,6 +464,16 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
+		7BDB9205ACACD476CE0BB2C772F739C6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				90ED5A402421CF28454CE79847B083ED /* Color */,
+				AB80EFCDF51017041A625DD47717A3C9 /* Enums */,
+				D811A9943B384CEA2FFF80F421EF7104 /* Errors */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +484,25 @@
 				A16A40F5EBE6B128284ECB3874C900A1 /* Products */,
 				A3996F59F484F7E24024A8C07333F28B /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8E407737F10B0AD62EAD6B61B3152C36 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F6FAB9829A0A64EBBBC125E90745ACB2 /* ReplaceMe.swift */,
+				BB676C08C55BD4DEB30EE55110B2CF90 /* Theme */,
+				7BDB9205ACACD476CE0BB2C772F739C6 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		90ED5A402421CF28454CE79847B083ED /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				590062CFDC66CD9601E519D47A37629E /* EnumColorable.swift */,
+				56268CFE1B8C6336CC30019F9BB585E5 /* UIColor+Hex.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		96F94B68FAE22A715EB07114B2EE3998 /* Pods-CocoazurLib_Example */ = {
@@ -528,6 +569,14 @@
 			path = "../Target Support Files/SwiftyDropbox";
 			sourceTree = "<group>";
 		};
+		AB80EFCDF51017041A625DD47717A3C9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				EE7565FE0C8ECA93E95A4243B61AE799 /* EnumListable.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		AFF6B7C34E97B0D7DA3C3EF7A40AB2B0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,12 +608,33 @@
 			path = Dropbox;
 			sourceTree = "<group>";
 		};
+		BB676C08C55BD4DEB30EE55110B2CF90 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				B594138230B5F1A2664A6BBC7A6C92E7 /* Theme.swift */,
+				AA3CDBBA4A7856EEF7DC31630EB02576 /* Themeable.swift */,
+				1BB2C202BA8CD762A2006D63DEBA5662 /* UIButton+Theme.swift */,
+				88BE62014D7469037DB5153EF6FEFC03 /* UILabel+Theme.swift */,
+				B64FDA027CAAF8A4A623AAA19DDC61FB /* UITextField+Theme.swift */,
+				108EF1663500773DF2F2128BC29865E2 /* UITextView+Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		D193EC8CC1D33D8251BB9E9503D697AC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				B951A5E8092B5E3A341D24FA28BF069B /* Dropbox */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		D811A9943B384CEA2FFF80F421EF7104 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				ECE58BC84BCF70C50177DE21B4E90108 /* ImplementationError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		E8747E116B78FFE28A2FD7BC0F174FCE /* Frameworks */ = {
@@ -598,14 +668,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42437CBE7290904F17E8C451E7E59305 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D383D125792321BB1FF7BAB98B23DE02 /* Cocoazur_Core-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5CD243550561C811BAE2DC1F794BF8D3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,6 +681,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				73303F5850575362D611B1C9812A3A2C /* Pods-CocoazurLib_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9FCB1FA3B9D0E5B55D54E44B73492FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEABDE0D951D9B4845D5CFAEB544C533 /* Cocoazur_Core-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,23 +781,6 @@
 			productReference = DE3A411737935CD810FF78A68808336D /* Pods_CocoazurLib_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		96D4241F00AC774FDAE84D4BE3FD3BD1 /* Cocoazur_Core */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 09D1AD1AD0BA7BDFE1DBDCCC95778A40 /* Build configuration list for PBXNativeTarget "Cocoazur_Core" */;
-			buildPhases = (
-				7E12D6651F3CC95C4A3679E354E7C225 /* Sources */,
-				1B8E85D514A73AC1BA8802253E5F26A6 /* Frameworks */,
-				42437CBE7290904F17E8C451E7E59305 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Cocoazur_Core;
-			productName = Cocoazur_Core;
-			productReference = 9FE4B3240CCD69976407CFD6C9C936E6 /* Cocoazur_Core.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		BF42F99AF2EEA46EDEDF65E1B2D66E1A /* SwiftyDropbox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07D6A6B204E11AB58F97C35A7FC2C140 /* Build configuration list for PBXNativeTarget "SwiftyDropbox" */;
@@ -744,6 +797,23 @@
 			name = SwiftyDropbox;
 			productName = SwiftyDropbox;
 			productReference = 48201AB7F1F9E81FB731054F8987EEC0 /* SwiftyDropbox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D204103B9B677CA702E14F565E6DFF6F /* Cocoazur_Core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 825D46624F32D000AF89583B8BB96E7D /* Build configuration list for PBXNativeTarget "Cocoazur_Core" */;
+			buildPhases = (
+				FBC8C8787EE6450E179B35D9AA8B6A89 /* Sources */,
+				93F8F0CDB17AF8F6239E2FF57387CCC9 /* Frameworks */,
+				B9FCB1FA3B9D0E5B55D54E44B73492FA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cocoazur_Core;
+			productName = Cocoazur_Core;
+			productReference = 9FE4B3240CCD69976407CFD6C9C936E6 /* Cocoazur_Core.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -768,7 +838,7 @@
 			projectRoot = "";
 			targets = (
 				79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */,
-				96D4241F00AC774FDAE84D4BE3FD3BD1 /* Cocoazur_Core */,
+				D204103B9B677CA702E14F565E6DFF6F /* Cocoazur_Core */,
 				00F80206E8CFF7EE694732F1DC792FA7 /* Cocoazur_Dropbox */,
 				947B96315D155DCF9FE2924B53946587 /* Pods-CocoazurLib_Example */,
 				7818DC3620B77113825AF88AD808C0EE /* Pods-CocoazurLib_Tests */,
@@ -792,15 +862,6 @@
 			files = (
 				84F0C7ECA1BCC52A75A4F9C3DCE8DA6F /* Cocoazur_Dropbox-dummy.m in Sources */,
 				5131854E6C81FB2FDA5DD275D404DDFB /* DropboxProxy.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E12D6651F3CC95C4A3679E354E7C225 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				447DFA90B9D0EDF398CBE59E73B8FB2F /* Cocoazur_Core-dummy.m in Sources */,
-				42ECEEEA245ED80F504F166FD6CFB63F /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,6 +922,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBC8C8787EE6450E179B35D9AA8B6A89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6850BD745984B2F21E4E8ABE27D4B842 /* Cocoazur_Core-dummy.m in Sources */,
+				7495D8A2FDE21833CB64523FA234B8FF /* EnumColorable.swift in Sources */,
+				F8784E310BA7EE57344983B5558D8DF7 /* EnumListable.swift in Sources */,
+				4BDDB5EC024FFE617888524C0AB7264D /* ImplementationError.swift in Sources */,
+				2227D9D2AF1815B44BEBDFBA6EA99F35 /* ReplaceMe.swift in Sources */,
+				292508F7C294EDBE2B7DAE040BC44C0F /* Theme.swift in Sources */,
+				95045E4DE42264621B709D452ACDD542 /* Themeable.swift in Sources */,
+				147358C6CCE5432C720415DB348F5003 /* UIButton+Theme.swift in Sources */,
+				2E42E0952E0BA3FAA150208A24012B42 /* UIColor+Hex.swift in Sources */,
+				88AFA22517A291A091F44483614696E3 /* UILabel+Theme.swift in Sources */,
+				9B3071E41138A618335F1B67E72B96CC /* UITextField+Theme.swift in Sources */,
+				BF13DFCC991734AF19A00D0BFD9F0B2D /* UITextView+Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -909,7 +989,7 @@
 		B041CE9035BDCE47693986FA3262A316 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cocoazur_Core;
-			target = 96D4241F00AC774FDAE84D4BE3FD3BD1 /* Cocoazur_Core */;
+			target = D204103B9B677CA702E14F565E6DFF6F /* Cocoazur_Core */;
 			targetProxy = D660CE775349CC37B014E7A4DF0F3663 /* PBXContainerItemProxy */;
 		};
 		B4E193F8509359D765529BC5C89CACCD /* PBXTargetDependency */ = {
@@ -927,13 +1007,13 @@
 		E39BA361013E835EA6104ECA8F42F5F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cocoazur_Core;
-			target = 96D4241F00AC774FDAE84D4BE3FD3BD1 /* Cocoazur_Core */;
+			target = D204103B9B677CA702E14F565E6DFF6F /* Cocoazur_Core */;
 			targetProxy = D167014F9A50A52E3325440017F67C32 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+		034014829C1E4434983CF3A690C12017 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -951,25 +1031,63 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
+		};
+		0E3CB574F5956ABBD0E134905D9A9BCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C385D891DFA25F3699A6D285EF27E78D /* Pods-CocoazurLib_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Pods-CocoazurLib_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoazurLib_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		1596AE77F500500A9E4834184AB6DE6D /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -999,6 +1117,36 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		1FD6230BBA3F8B3D8885F259BE73BC7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1E3802FF2C0292892E25C00956436B /* Cocoazur_Core.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cocoazur_Core/Cocoazur_Core-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cocoazur_Core/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cocoazur_Core/Cocoazur_Core.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Cocoazur_Core;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		32AD5F8918CA8B349E4671410FA624C9 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1059,6 +1207,39 @@
 			};
 			name = Debug;
 		};
+		481C9676F4A24893E5590C6DFB9BDE5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AE04F757B0C3190818B7B64FF6FB0E6 /* Pods-CocoazurLib_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Example/Pods-CocoazurLib_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoazurLib_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5398E943B6D15C88012D093147582DD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C10B72E9FC349F951CD9EF799FCB976 /* SwiftyDropbox.xcconfig */;
@@ -1089,9 +1270,9 @@
 			};
 			name = Debug;
 		};
-		627BE858F02E300435BCC84A7F2CCE34 /* Debug */ = {
+		55806C6B645E414536CCAF0E69E84C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C385D891DFA25F3699A6D285EF27E78D /* Pods-CocoazurLib_Tests.debug.xcconfig */;
+			baseConfigurationReference = 090869FB1380C9FE32A7F14F4C016D94 /* Pods-CocoazurLib_Example.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1102,18 +1283,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Pods-CocoazurLib_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Example/Pods-CocoazurLib_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CocoazurLib_Tests;
+				PRODUCT_NAME = Pods_CocoazurLib_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1153,9 +1334,9 @@
 			};
 			name = Debug;
 		};
-		A6494E54297455505488733EF059AF3E /* Release */ = {
+		8504D2AEC5823A41E8940F57AE74506C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AE04F757B0C3190818B7B64FF6FB0E6 /* Pods-CocoazurLib_Example.release.xcconfig */;
+			baseConfigurationReference = E2EE6BCF26811FABAD6E0D39B53651D2 /* Pods-CocoazurLib_Tests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1166,18 +1347,47 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Example/Pods-CocoazurLib_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Pods-CocoazurLib_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CocoazurLib_Example;
+				PRODUCT_NAME = Pods_CocoazurLib_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AACA50D3DA8FA205690EE91FFD031F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1E3802FF2C0292892E25C00956436B /* Cocoazur_Core.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cocoazur_Core/Cocoazur_Core-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cocoazur_Core/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cocoazur_Core/Cocoazur_Core.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Cocoazur_Core;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1215,41 +1425,7 @@
 			};
 			name = Release;
 		};
-		C26A9CF614EE505FEB744EC9272036B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 090869FB1380C9FE32A7F14F4C016D94 /* Pods-CocoazurLib_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Example/Pods-CocoazurLib_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CocoazurLib_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+		C7E474A03CAE21F1CB6046E7344C59BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1267,119 +1443,23 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
+					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		DD91EA1A03466787E9B718F0C727A9C4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE1E3802FF2C0292892E25C00956436B /* Cocoazur_Core.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Cocoazur_Core/Cocoazur_Core-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cocoazur_Core/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Cocoazur_Core/Cocoazur_Core.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Cocoazur_Core;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EF185C138ED8F242F0ECD38A5AB913A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE1E3802FF2C0292892E25C00956436B /* Cocoazur_Core.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Cocoazur_Core/Cocoazur_Core-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cocoazur_Core/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Cocoazur_Core/Cocoazur_Core.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Cocoazur_Core;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F563C45832DDE6C9BB64C5F5821C3BE3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2EE6BCF26811FABAD6E0D39B53651D2 /* Pods-CocoazurLib_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CocoazurLib_Tests/Pods-CocoazurLib_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CocoazurLib_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1395,20 +1475,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09D1AD1AD0BA7BDFE1DBDCCC95778A40 /* Build configuration list for PBXNativeTarget "Cocoazur_Core" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EF185C138ED8F242F0ECD38A5AB913A2 /* Debug */,
-				DD91EA1A03466787E9B718F0C727A9C4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
-				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+				034014829C1E4434983CF3A690C12017 /* Debug */,
+				C7E474A03CAE21F1CB6046E7344C59BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1422,11 +1493,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		825D46624F32D000AF89583B8BB96E7D /* Build configuration list for PBXNativeTarget "Cocoazur_Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FD6230BBA3F8B3D8885F259BE73BC7C /* Debug */,
+				AACA50D3DA8FA205690EE91FFD031F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8D999F05CA60BC1D46E2BF105D348BDF /* Build configuration list for PBXNativeTarget "Pods-CocoazurLib_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C26A9CF614EE505FEB744EC9272036B3 /* Debug */,
-				A6494E54297455505488733EF059AF3E /* Release */,
+				55806C6B645E414536CCAF0E69E84C6D /* Debug */,
+				481C9676F4A24893E5590C6DFB9BDE5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1434,8 +1514,8 @@
 		D5ABA57FC01E8DF297C8E2D1B30D51AE /* Build configuration list for PBXNativeTarget "Pods-CocoazurLib_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				627BE858F02E300435BCC84A7F2CCE34 /* Debug */,
-				F563C45832DDE6C9BB64C5F5821C3BE3 /* Release */,
+				0E3CB574F5956ABBD0E134905D9A9BCC /* Debug */,
+				8504D2AEC5823A41E8940F57AE74506C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
