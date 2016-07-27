@@ -9,7 +9,7 @@
 import UIKit
 
 
-public extension UILabel {
+extension UILabel: ThemeStyleable {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";
@@ -66,7 +66,7 @@ public extension UILabel {
         self.setStyles();
     }
     
-    func setStyles() {
+    public func setStyles() {
         Theme.currentTheme?.styleLabel(self, withStyle: style);
     }
     
@@ -84,3 +84,6 @@ public extension UILabel {
         self.attributedText = attributedString;
     }
 }
+//extension UILabel: ThemeStyleable {
+//    
+//}

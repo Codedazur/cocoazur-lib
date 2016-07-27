@@ -1,5 +1,5 @@
 //
-//  ExampleTheme.swift
+//  Example2Theme.swift
 //  CocoazurLib
 //
 //  Created by Gerardo Garrido on 20/07/16.
@@ -11,30 +11,30 @@ import Cocoazur_Core
 //import Cocoazur_Core
 
 
-class ExampleTheme: Themeable {
+class Example2Theme: Themeable {
     
     // MARK: Themeable functions
     
     func styleLabel(label: UILabel, withStyle style: String) {
-        guard let textStyle = TextStyleExample(rawValue: style) else {
+        guard let textStyle = TextStyleExample2(rawValue: style) else {
             return;
         }
         switch textStyle {
             
         case .Header:
-            label.textColor = ColorExample.Primary.colorValue();
+            label.textColor = ColorExample2.Primary.colorValue();
             
         case .Body:
-            label.textColor = ColorExample.Secondary.colorValue();
+            label.textColor = ColorExample2.Secondary.colorValue();
             
         case .ThumbnailSubtitle:
-            label.textColor = ColorExample.Tertiary.colorValue();
+            label.textColor = ColorExample2.Tertiary.colorValue();
             
         case .Link:
-            label.textColor = ColorExample.Secondary.colorValue();
+            label.textColor = ColorExample2.Secondary.colorValue();
             
         case .LinkActive:
-            label.textColor = ColorExample.Primary.colorValue();
+            label.textColor = ColorExample2.Primary.colorValue();
         }
         
         guard let font = self.getFontForTextStyle(style) else {
@@ -69,19 +69,19 @@ class ExampleTheme: Themeable {
     }
     
     func getFontForTextStyle(style: String) -> UIFont? {
-        guard let textStyle = TextStyleExample(rawValue: style) else {
+        guard let textStyle = TextStyleExample2(rawValue: style) else {
             return nil;
         }
         
         switch textStyle {
-            case .Header, .Link, .LinkActive:
-                return self.verdanaBoldFontWithSize(13);
-                
-            case .Body:
-                return self.verdanaRegularFontWithSize(13);
-                
-            case .ThumbnailSubtitle:
-                return self.verdanaBoldFontWithSize(9);
+        case .Header, .Link, .LinkActive:
+            return self.boldFontWithSize(17);
+            
+        case .Body:
+            return self.regularFontWithSize(14);
+            
+        case .ThumbnailSubtitle:
+            return self.boldFontWithSize(11);
         }
     }
     
@@ -107,23 +107,23 @@ class ExampleTheme: Themeable {
     
     // MARK: Private functions
     
-    private func verdanaRegularFontWithSize(size: CGFloat) -> UIFont? {
-        return UIFont(name: "Verdana", size: size);
+    private func regularFontWithSize(size: CGFloat) -> UIFont? {
+        return UIFont(name: "Kailasa", size: size);
     }
     
-    private func verdanaBoldFontWithSize(size: CGFloat) -> UIFont? {
-        return UIFont(name: "Verdana-Bold", size: size);
+    private func boldFontWithSize(size: CGFloat) -> UIFont? {
+        return UIFont(name: "Kailasa-Bold", size: size);
     }
 }
 
-enum ColorExample: Int, EnumColorable {
-    case Primary = 0x171717;
-    case Secondary = 0x6e6e6e;
-    case Tertiary = 0xe0e0e0;
+enum ColorExample2: Int, EnumColorable {
+    case Primary = 0xff5555;
+    case Secondary = 0x333333;
+    case Tertiary = 0x55ff55;
     case Accessory = 0xffffff;
 }
 
-enum TextStyleExample: String {
+enum TextStyleExample2: String {
     case Header;
     case Body;
     case ThumbnailSubtitle;

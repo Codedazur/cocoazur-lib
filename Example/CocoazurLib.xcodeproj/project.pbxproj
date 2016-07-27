@@ -10,6 +10,8 @@
 		4F6F229AC3014187F19EFD16 /* Pods_CocoazurLib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4CB8DD1FF2DA6C18E675BA /* Pods_CocoazurLib_Tests.framework */; };
 		563106371D48D091005E3ACB /* cda-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 563106361D48D091005E3ACB /* cda-image.png */; };
 		5631063B1D48D0D7005E3ACB /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */; };
+		56A2D71D1D48E3640081D18F /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2D71C1D48E3640081D18F /* ThemeViewController.swift */; };
+		56A2D7211D48F4830081D18F /* Example2Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2D7201D48F4830081D18F /* Example2Theme.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		3C4A8EF262EBE159A7A9F297 /* Pods-CocoazurLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoazurLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoazurLib_Tests/Pods-CocoazurLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		563106361D48D091005E3ACB /* cda-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cda-image.png"; sourceTree = "<group>"; };
 		5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
+		56A2D71C1D48E3640081D18F /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		56A2D7201D48F4830081D18F /* Example2Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example2Theme.swift; sourceTree = "<group>"; };
 		5E4CB8DD1FF2DA6C18E675BA /* Pods_CocoazurLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoazurLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CocoazurLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoazurLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */,
+				56A2D7201D48F4830081D18F /* Example2Theme.swift */,
+				56A2D71C1D48E3640081D18F /* ThemeViewController.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -409,7 +415,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				56A2D7211D48F4830081D18F /* Example2Theme.swift in Sources */,
 				5631063B1D48D0D7005E3ACB /* ExampleTheme.swift in Sources */,
+				56A2D71D1D48E3640081D18F /* ThemeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

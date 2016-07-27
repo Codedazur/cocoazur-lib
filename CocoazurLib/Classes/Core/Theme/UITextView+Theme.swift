@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UITextView {
+extension UITextView: ThemeStyleable {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";
@@ -65,7 +65,7 @@ public extension UITextView {
         self.setStyles();
     }
     
-    func setStyles() {
+    public func setStyles() {
         Theme.currentTheme?.styleTextView(self, withStyle: style);
     }
     

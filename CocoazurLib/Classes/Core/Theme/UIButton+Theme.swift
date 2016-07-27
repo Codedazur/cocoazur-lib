@@ -9,7 +9,7 @@
 import UIKit
 
 
-public extension UIButton {
+extension UIButton: ThemeStyleable {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";
@@ -39,7 +39,7 @@ public extension UIButton {
         self.setStyles();
     }
     
-    func setStyles() {
+    public func setStyles() {
         Theme.currentTheme?.styleButton(self, withStyle: style);
     }
 }

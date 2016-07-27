@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UITextField {
+extension UITextField: ThemeStyleable {
     
     private struct AssociatedKeys {
         static var Style = "cda_StyleString";
@@ -38,7 +38,7 @@ public extension UITextField {
         self.setStyles();
     }
     
-    func setStyles() {
+    public func setStyles() {
         Theme.currentTheme?.styleTextField(self, withStyle: style);
     }
 }

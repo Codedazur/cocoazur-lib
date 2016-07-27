@@ -1,14 +1,14 @@
 //
-//  Theme.swift
+//  ThemeStyleable.swift
 //  CocoazurLib
 //
 //  Created by Gerardo Garrido on 06/07/16.
 //  Copyright © 2016 Code d'Azur. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
-public class Theme {
-    public static var currentTheme: Themeable?
+public protocol ThemeStyleable {
+    func setStyles();
 }
