@@ -12,6 +12,8 @@
 		5631063B1D48D0D7005E3ACB /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */; };
 		56A2D71D1D48E3640081D18F /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2D71C1D48E3640081D18F /* ThemeViewController.swift */; };
 		56A2D7211D48F4830081D18F /* Example2Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2D7201D48F4830081D18F /* Example2Theme.swift */; };
+		56E920E61D50ADC900F39422 /* SPMMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E920E51D50ADC900F39422 /* SPMMainViewController.swift */; };
+		56E920E81D50ADD800F39422 /* SPMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E920E71D50ADD800F39422 /* SPMMenuViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		5631063A1D48D0D7005E3ACB /* ExampleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
 		56A2D71C1D48E3640081D18F /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		56A2D7201D48F4830081D18F /* Example2Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example2Theme.swift; sourceTree = "<group>"; };
+		56E920E51D50ADC900F39422 /* SPMMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMMainViewController.swift; sourceTree = "<group>"; };
+		56E920E71D50ADD800F39422 /* SPMMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMMenuViewController.swift; sourceTree = "<group>"; };
 		5E4CB8DD1FF2DA6C18E675BA /* Pods_CocoazurLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoazurLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CocoazurLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoazurLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		56E920E41D50AD8800F39422 /* SidePanelMenu */ = {
+			isa = PBXGroup;
+			children = (
+				56E920E51D50ADC900F39422 /* SPMMainViewController.swift */,
+				56E920E71D50ADD800F39422 /* SPMMenuViewController.swift */,
+			);
+			path = SidePanelMenu;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,7 @@
 		607FACD21AFB9204008FA782 /* Example for CocoazurLib */ = {
 			isa = PBXGroup;
 			children = (
+				56E920E41D50AD8800F39422 /* SidePanelMenu */,
 				563106391D48D0D7005E3ACB /* Theme */,
 				634F19741D2D3FF900363F58 /* Resources */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -414,10 +428,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E920E81D50ADD800F39422 /* SPMMenuViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				56A2D7211D48F4830081D18F /* Example2Theme.swift in Sources */,
 				5631063B1D48D0D7005E3ACB /* ExampleTheme.swift in Sources */,
 				56A2D71D1D48E3640081D18F /* ThemeViewController.swift in Sources */,
+				56E920E61D50ADC900F39422 /* SPMMainViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

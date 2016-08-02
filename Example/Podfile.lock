@@ -3,25 +3,31 @@ PODS:
   - Cocoazur_Core (0.1.0)
   - Cocoazur_Dropbox (0.1.0):
     - SwiftyDropbox (~> 3.0.0)
+  - Cocoazur_SidePanelMenu (0.1.0):
+    - SwiftyDropbox (~> 3.0.0)
   - SwiftyDropbox (3.0.0):
     - Alamofire (~> 3.1)
 
 DEPENDENCIES:
   - Cocoazur_Core (from `../`)
   - Cocoazur_Dropbox (from `../`)
+  - Cocoazur_SidePanelMenu (from `../`)
 
 EXTERNAL SOURCES:
   Cocoazur_Core:
-    :path: ../
+    :path: "../"
   Cocoazur_Dropbox:
-    :path: ../
+    :path: "../"
+  Cocoazur_SidePanelMenu:
+    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Cocoazur_Core: 8e88211c309eb4dcaaaaa704350a3b121c58d789
   Cocoazur_Dropbox: d99b9bada46bf58fbe5e3ff739c7c9bfb865b288
+  Cocoazur_SidePanelMenu: 2bfa8f99748eb6dbcd2ff3bddbe3ad47c55bfbac
   SwiftyDropbox: e0d4aa3166082ec07ed942e94edb8c732b3376e4
 
-PODFILE CHECKSUM: 99bc1fcc203075bf9df1c7802348abba6be6ed0b
+PODFILE CHECKSUM: f485fd7515e18cbd204e28057b4985a3a851c19c
 
 COCOAPODS: 1.0.1

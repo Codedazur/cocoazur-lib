@@ -1,0 +1,6 @@
+framework module Cocoazur_SidePanelMenu {
+  umbrella header "Cocoazur_SidePanelMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}
