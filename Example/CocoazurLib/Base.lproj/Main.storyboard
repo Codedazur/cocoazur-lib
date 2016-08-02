@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sSe-ET-CvP">
-                                <rect key="frame" x="126" y="303" width="122" height="60"/>
+                                <rect key="frame" x="126" y="288.5" width="122" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHd-ls-Heh">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="30"/>
@@ -48,6 +48,13 @@
                                         <state key="normal" title="Theming Example"/>
                                         <connections>
                                             <segue destination="oZs-Tm-Eyl" kind="show" id="Hlc-Ux-3z0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpL-lR-Mh9">
+                                        <rect key="frame" x="0.0" y="60" width="122" height="30"/>
+                                        <state key="normal" title="Side Panel Menu"/>
+                                        <connections>
+                                            <segue destination="eFD-0H-XNU" kind="show" id="WDa-Vv-wXw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -154,6 +161,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eED-6q-51a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="681.5" y="313.5"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="yNp-qw-V15">
+            <objects>
+                <viewController id="eFD-0H-XNU" customClass="SPMMainViewController" customModule="CocoazurLib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="84Z-1h-VIC"/>
+                        <viewControllerLayoutGuide type="bottom" id="jir-tX-pZ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bEc-tR-U3j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIc-a9-1Ua">
+                                <rect key="frame" x="316" y="74" width="39" height="30"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <segue destination="JZD-HT-1fB" kind="presentation" identifier="PresentMenu" modalPresentationStyle="overFullScreen" id="xBo-Xz-8FF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uIc-a9-1Ua" firstAttribute="top" secondItem="84Z-1h-VIC" secondAttribute="bottom" constant="10" id="54d-4X-AsQ"/>
+                            <constraint firstAttribute="trailing" secondItem="uIc-a9-1Ua" secondAttribute="trailing" constant="20" id="Xhz-QM-2Rd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnM-pr-xVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164.5" y="1093.5"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="gGC-p0-QAa">
+            <objects>
+                <viewController id="JZD-HT-1fB" customClass="SPMMenuViewController" customModule="CocoazurLib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HX1-UA-dBk"/>
+                        <viewControllerLayoutGuide type="bottom" id="uIr-pi-R0c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v4P-qv-Fle">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-8h-dYQ">
+                                <rect key="frame" x="168" y="627" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="HPL-Hu-J1d" kind="unwind" identifier="DismissMenu" unwindAction="unwindSegue:" id="f9k-DO-dTC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eoJ-8h-dYQ" firstAttribute="centerX" secondItem="v4P-qv-Fle" secondAttribute="centerX" id="DDK-fj-Ijs"/>
+                            <constraint firstItem="uIr-pi-R0c" firstAttribute="top" secondItem="eoJ-8h-dYQ" secondAttribute="bottom" constant="10" id="GLU-Z7-OsW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlm-a7-qo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HPL-Hu-J1d" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="681.5" y="1093.5"/>
         </scene>
     </scenes>
     <resources>
