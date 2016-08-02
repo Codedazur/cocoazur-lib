@@ -30,7 +30,7 @@ public class AbstractService:Service{
     }
     public func read(params: [String : AnyObject], result: ((response: AnyObject, error: ErrorType?) -> Void)) {
         self.connector.read(baseUrl, resource: resource, params: params) {[weak self] (response, error) in
-            guard let _error = error else{
+            guard let _ = error else{
                 guard let _cache = self?.cache, let _resource = self?.resource else{
                     result(response: response, error: error)
                     return;
@@ -41,11 +41,6 @@ public class AbstractService:Service{
                 })
                 return;
             }
-            guard let _parser = self?.parser else{
-                result(response: response, error: nil)
-                return;
-            }
-            
             self?.parse(response, result: result)
         }
     }

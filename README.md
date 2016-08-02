@@ -31,7 +31,7 @@ git push --tags
 pod repo push bitbucket-cda-ios-pods Cocoazur_Core.podspec --allow-warnings --use-libraries
 pod repo push bitbucket-cda-ios-pods Cocoazur_Dropbox.podspec --allow-warnings --use-libraries
 pod repo push bitbucket-cda-ios-pods Cocoazur_ServicesAlamofire.podspec --allow-warnings --use-libraries
-pod repo push bitbucket-cda-ios-pods Cocoazur_Services.podspec --allow-warnings --use-libraries
+pod repo push bitbucket-cda-ios-pods Cocoazur_Services.podspec
 
 ```
 

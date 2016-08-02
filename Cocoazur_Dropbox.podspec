@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/CocoazurLib'
+  s.homepage         = 'https://github.com/Codedazur/cocoazur-lib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tamara Bernad' => 'tamarinda@gmail.com' }
