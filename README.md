@@ -20,12 +20,12 @@ it, simply add the following line to your Podfile:
 git add -A && git commit -m "Cocoazur_Core-0.0.19"
 git add -A && git commit -m "Cocoazur_Dropbox-0.0.19"
 git add -A && git commit -m "Cocoazur_ServicesAlamofire-0.0.19"
-git add -A && git commit -m "Cocoazur_Services-0.0.19"
+git add -A && git commit -m "Cocoazur_Services-0.1.0"
 
 git tag 'Cocoazur_Core-0.0.19'
 git tag 'Cocoazur_Dropbox-0.0.19'
 git tag 'Cocoazur_ServicesAlamofire-0.0.19'
-git add -A && git commit -m "Cocoazur_Services-0.0.19"
+git tag 'Cocoazur_Services-0.1.9'
 
 git push --tags
 pod repo push bitbucket-cda-ios-pods Cocoazur_Core.podspec --allow-warnings --use-libraries
