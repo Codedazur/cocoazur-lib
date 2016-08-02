@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Cocoazur_Services'
-  s.source_files     = 'CocoazurLib/Classes/Services/**/*'
+  s.source_files     = 'CocoazurLib/Classes/Services/**/*.{c,h,hh,m,mm,swift}'
   s.version          = '0.1.0'
   s.summary          = 'A short description of Cocoazur_Services.'
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tamara Bernad' => 'tamarinda@gmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/CocoazurLib.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Codedazur/cocoazur-lib.git', :tag => 'Cocoazur_Services-'+s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
