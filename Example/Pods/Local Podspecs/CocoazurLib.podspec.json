@@ -18,5 +18,16 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CocoazurLib/Classes/**/*"
+  "source_files": "CocoazurLib/Classes/**/*",
+  "subspecs": [
+    {
+      "name": "CDADropbox",
+      "source_files": "Source/Dropbox/**/*",
+      "dependencies": {
+        "SwiftyDropbox": [
+          "~> 3.0.0"
+        ]
+      }
+    }
+  ]
 }

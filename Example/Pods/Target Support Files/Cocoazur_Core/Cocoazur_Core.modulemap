@@ -1,0 +1,6 @@
+framework module Cocoazur_Core {
+  umbrella header "Cocoazur_Core-umbrella.h"
+
+  export *
+  module * { export * }
+}

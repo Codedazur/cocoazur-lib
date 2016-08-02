@@ -84,8 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/CocoazurLib/CocoazurLib.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cocoazur_Core/Cocoazur_Core.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cocoazur_Dropbox/Cocoazur_Dropbox.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyDropbox/SwiftyDropbox.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/CocoazurLib/CocoazurLib.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cocoazur_Core/Cocoazur_Core.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cocoazur_Dropbox/Cocoazur_Dropbox.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyDropbox/SwiftyDropbox.framework"
 fi
