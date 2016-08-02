@@ -42,6 +42,8 @@
 		63E3EA8B1D509E5D00C3623C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3EA8A1D509E5D00C3623C /* Service.swift */; };
 		63E3EA8D1D509E6C00C3623C /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3EA8C1D509E6C00C3623C /* Connector.swift */; };
 		63E3EA8F1D50A87200C3623C /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3EA8E1D50A87200C3623C /* Parser.swift */; };
+		63E3EA921D50A9AD00C3623C /* AbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3EA911D50A9AD00C3623C /* AbstractService.swift */; };
+		63E3EA941D50AC4E00C3623C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3EA931D50AC4E00C3623C /* Cache.swift */; };
 		71C9BB1B8C25BA6BE99AC39B48CC713F /* Cocoazur_Core-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3859C4C4E35809E01D0042D4806891AA /* Cocoazur_Core-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79A454F8F7AD35D1036122AB469249E5 /* UITextView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D1CB7167AE6B3D9AB5A8C235B5E98 /* UITextView+Theme.swift */; };
 		79F2AA121D98AAD1A1B3BFD5F24C5A4D /* UsersRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7EF08649E263A0702C5EC25139D3D /* UsersRoutes.swift */; };
@@ -224,6 +226,8 @@
 		63E3EA8A1D509E5D00C3623C /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		63E3EA8C1D509E6C00C3623C /* Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
 		63E3EA8E1D50A87200C3623C /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		63E3EA911D50A9AD00C3623C /* AbstractService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractService.swift; sourceTree = "<group>"; };
+		63E3EA931D50AC4E00C3623C /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		6753ADE34E98CC5B07E36EBD55AE6498 /* UILabel+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+Theme.swift"; sourceTree = "<group>"; };
 		688B7DD805164885D2A7725F36B68B3F /* ImplementationError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImplementationError.swift; sourceTree = "<group>"; };
 		6A139494C48636949648FB353D3D3FFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -457,8 +461,17 @@
 				63E3EA8A1D509E5D00C3623C /* Service.swift */,
 				63E3EA8C1D509E6C00C3623C /* Connector.swift */,
 				63E3EA8E1D50A87200C3623C /* Parser.swift */,
+				63E3EA931D50AC4E00C3623C /* Cache.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		63E3EA901D50A9A400C3623C /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				63E3EA911D50A9AD00C3623C /* AbstractService.swift */,
+			);
+			path = Impl;
 			sourceTree = "<group>";
 		};
 		6A53A5A7D23D7E984A0DF57A330434C8 /* Classes */ = {
@@ -575,6 +588,7 @@
 		97257E84E4292751E53D16981FCA29CD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				63E3EA901D50A9A400C3623C /* Impl */,
 				63E3EA871D509E2E00C3623C /* Protocols */,
 			);
 			path = Services;
@@ -982,8 +996,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C430DFFF3C38E4A73B62A739364A8B6 /* Cocoazur_Services-dummy.m in Sources */,
+				63E3EA921D50A9AD00C3623C /* AbstractService.swift in Sources */,
 				63E3EA8B1D509E5D00C3623C /* Service.swift in Sources */,
 				63E3EA8F1D50A87200C3623C /* Parser.swift in Sources */,
+				63E3EA941D50AC4E00C3623C /* Cache.swift in Sources */,
 				63E3EA8D1D509E6C00C3623C /* Connector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
