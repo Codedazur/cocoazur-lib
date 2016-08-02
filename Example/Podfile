@@ -3,11 +3,13 @@ use_frameworks!
 target 'CocoazurLib_Example' do
   pod 'Cocoazur_Core', :path => '../'
   pod 'Cocoazur_Dropbox', :path => '../'
+  pod 'Cocoazur_Services', :path => '../'
 
   target 'CocoazurLib_Tests' do
     inherit! :search_paths
     pod 'Cocoazur_Core', :path => '../'
     pod 'Cocoazur_Dropbox', :path => '../'
+    pod 'Cocoazur_Services', :path => '../'
     
   end
 end

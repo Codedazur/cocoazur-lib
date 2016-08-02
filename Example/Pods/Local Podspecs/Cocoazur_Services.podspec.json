@@ -1,0 +1,22 @@
+{
+  "name": "Cocoazur_Services",
+  "source_files": "CocoazurLib/Classes/Services/**/*",
+  "version": "0.1.0",
+  "summary": "A short description of Cocoazur_Services.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/CocoazurLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Tamara Bernad": "tamarinda@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/CocoazurLib.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  }
+}
