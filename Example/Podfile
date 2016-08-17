@@ -4,12 +4,13 @@ target 'CocoazurLib_Example' do
   pod 'Cocoazur_Core', :path => '../'
   pod 'Cocoazur_Dropbox', :path => '../'
   pod 'Cocoazur_Services', :path => '../'
+  pod 'Cocoazur_ServicesAlamofire', :path => '../'
 
   target 'CocoazurLib_Tests' do
     inherit! :search_paths
     pod 'Cocoazur_Core', :path => '../'
     pod 'Cocoazur_Dropbox', :path => '../'
     pod 'Cocoazur_Services', :path => '../'
-    
+    pod 'Cocoazur_ServicesAlamofire', :path => '../'  
   end
 end

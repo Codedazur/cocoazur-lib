@@ -1,8 +1,8 @@
 {
-  "name": "Cocoazur_Services",
-  "source_files": "CocoazurLib/Classes/Services/**/*.{c,h,hh,m,mm,swift}",
+  "name": "Cocoazur_ServicesAlamofire",
+  "source_files": "CocoazurLib/Classes/ServicesAlamofire/**/*",
   "version": "0.1.0",
-  "summary": "A short description of Cocoazur_Services.",
+  "summary": "A short description of Cocoazur_ServicesAlamofire.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Codedazur/cocoazur-lib",
   "license": {
@@ -14,9 +14,17 @@
   },
   "source": {
     "git": "https://github.com/Codedazur/cocoazur-lib.git",
-    "tag": "Cocoazur_Services-0.1.0"
+    "tag": "Cocoazur_ServicesAlamofire-0.1.0"
   },
   "platforms": {
     "ios": "8.0"
+  },
+  "dependencies": {
+    "Cocoazur_Services": [
+      "~> 0.1.0"
+    ],
+    "Alamofire": [
+      "~> 3.4"
+    ]
   }
 }

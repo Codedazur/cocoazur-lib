@@ -1,0 +1,6 @@
+framework module Cocoazur_ServicesAlamofire {
+  umbrella header "Cocoazur_ServicesAlamofire-umbrella.h"
+
+  export *
+  module * { export * }
+}

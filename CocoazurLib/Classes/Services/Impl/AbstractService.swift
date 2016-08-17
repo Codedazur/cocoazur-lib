@@ -57,11 +57,11 @@ public class AbstractService:Service{
     
     // MARK: helpers
     private func handleConnectorResponse(response:AnyObject, error:ErrorType?, result: ((response: AnyObject, error: ErrorType?) -> Void))->Void{
-        guard let _error = error else{
+        guard let _ = error else{
             result(response: response, error: error)
             return;
         }
-        guard let _parser = self.parser else{
+        guard let _ = self.parser else{
             result(response: response, error: nil)
             return;
         }
